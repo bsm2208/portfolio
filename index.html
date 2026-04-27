@@ -1,1 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Your Name</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+ --bg:#fafaf8;
+ --text:#1d1d1d;
+ --muted:#7a7a7a;
+ --line:#ddddda;
+}
+
+*{
+ margin:0;
+ padding:0;
+ box-sizing:border-box;
+}
+
+html{
+ scroll-behavior:smooth;
+}
+
+body{
+ background:var(--bg);
+ color:var(--text);
+ font-family:Inter,sans-serif;
+ line-height:1.7;
+}
+
+/* subtle grid background */
+body:before{
+ content:"";
+ position:fixed;
+ inset:0;
+ background-image:
+ linear-gradient(to right,#f0f0ed 1px,transparent 1px),
+ linear-gradient(to bottom,#f0f0ed 1px,transparent 1px);
+ background-size:80px 80px;
+ opacity:.4;
+ z-index:-1;
+}
+
+.container{
+ width:min(1100px,90%);
+ margin:auto;
+}
+
+nav{
+ padding:36px 0;
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ border-bottom:1px solid var(--line);
+}
+
+.logo{
+ font-family:"Cormorant Garamond",serif;
+ font-size:2rem;
+}
+
+nav ul{
+ display:flex;
+ gap:32px;
+ list-style:none;
+}
+
+nav a{
+ text-decoration:none;
+ color:var(--text);
+}
+
+.hero{
+ min-height:90vh;
+ display:grid;
+ align-items:center;
+ padding:80px 0;
+}
+
+.hero-grid{
+ display:grid;
+ grid-template-columns:2fr 1fr;
+ gap:80px;
+}
+
+.hero h1{
+ font-family:"Cormorant Garamond",serif;
+ font-weight:400;
+ font-size:clamp(4rem,10vw,8rem);
+ line-height:.95;
+ letter-spacing:-2px;
+ margin-bottom:30px;
+}
+
+.hero p{
+ max-width:650px;
+ font-size:1.25rem;
+ color:#4b4b4b;
+}
+
+.note-box{
+ border:1px solid var(--line);
+ padding:32px;
+ background:rgba(255,255,255,.7);
+ align-self:center;
+}
+
+.note-box p{
+ font-size:.95rem;
+ color:var(--muted);
+}
+
+.section{
+ padding:120px 0;
+}
+
+.section-title{
+ font-family:"Cormorant Garamond",serif;
+ font-size:3.2rem;
+ margin-bottom:60px;
+}
+
+.projects{
+ display:grid;
+ grid-template-columns:repeat(2,1fr);
+ gap:40px;
+}
+
+.card{
+ background:white;
+ border:1px solid var(--line);
+ padding:40px;
+ transition:.3s;
+}
+
+.card:nth-child(2){
+ transform:translateY(60px);
+}
+
+.card:nth-child(3){
+ transform:translateY(-20px);
+}
+
+.card:hover{
+ transform:translateY(-8px);
+}
+
+.project-number{
+ color:#999;
+ margin-bottom:12px;
+}
+
+.card h3{
+ font-size:1.6rem;
+ font-weight:400;
+ margin-bottom:16px;
+}
+
+.card p{
+ color:#666;
+ margin-bottom:18px;
+}
+
+.tags{
+ display:flex;
+ gap:10px;
+ flex-wrap:wrap;
+}
+
+.tag{
+ border:1px solid #d9d9d5;
+ padding:6px 12px;
+ font-size:.8rem;
+}
+
+.timeline{
+ border-left:1px solid var(--line);
+ margin-left:25px;
+ padding-left:50px;
+}
+
+.entry{
+ margin-bottom:70px;
+ position:relative;
+}
+
+.entry:before{
+ content:"";
+ width:14px;
+ height:14px;
+ border-radius:50%;
+ background:var(--bg);
+ border:1px solid #aaa;
+ position:absolute;
+ left:-58px;
+ top:8px;
+}
+
+.entry-year{
+ color:#999;
+ margin-bottom:10px;
+}
+
+.about-grid{
+ display:grid;
+ grid-template-columns:1.2fr .8fr;
+ gap:80px;
+}
+
+.footer{
+ padding:100px 0 60px;
+ border-top:1px solid var(--line);
+ display:flex;
+ justify-content:space-between;
+ flex-wrap:wrap;
+ gap:20px;
+}
+
+.small{
+ color:#777;
+}
+
+@media(max-width:900px){
+
+.hero-grid,
+.about-grid,
+.projects{
+grid-template-columns:1fr;
+}
+
+.card:nth-child(2),
+.card:nth-child(3){
+transform:none;
+}
+
+.hero h1{
+font-size:4rem;
+}
+
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<nav>
+<div class="logo">Your Name</div>
+
+<ul>
+<li><a href="#work">Work</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+
+<section class="hero">
+<div class="hero-grid">
+
+<div>
+<h1>
+Data.<br>
+Systems.<br>
+Stories.
+</h1>
+
+<p>
+I build research-driven projects around analytics,
+migration, healthcare, and information design.
+A portfolio as an evolving notebook.
+</p>
+</div>
+
+<div class="note-box">
+<p>
+Selected experiments in data visualization,
+policy research, modeling, and digital storytelling.
+</p>
+</div>
+
+</div>
+</section>
+
+
+
+<section id="work" class="section">
+
+<h2 class="section-title">Selected Work</h2>
+
+<div class="projects">
+
+<div class="card">
+<div class="project-number">01</div>
+<h3>Migration Data Explorer</h3>
+<p>
+Interactive OECD migration analysis and visual storytelling.
+</p>
+
+<div class="tags">
+<div class="tag">Python</div>
+<div class="tag">Visualization</div>
+<div class="tag">Research</div>
+</div>
+</div>
+
+
+<div class="card">
+<div class="project-number">02</div>
+<h3>Clinical Outcome Modeling</h3>
+<p>
+Predictive models and optimization methods
+for surgical planning.
+</p>
+
+<div class="tags">
+<div class="tag">Machine Learning</div>
+<div class="tag">Healthcare</div>
+</div>
+</div>
+
+
+<div class="card">
+<div class="project-number">03</div>
+<h3>Policy Dashboard</h3>
+<p>
+Interactive dashboard for public policy indicators.
+</p>
+
+<div class="tags">
+<div class="tag">SQL</div>
+<div class="tag">Dashboard</div>
+</div>
+</div>
+
+
+<div class="card">
+<div class="project-number">04</div>
+<h3>Research Archive</h3>
+<p>
+Essays, notebooks and exploratory analyses.
+</p>
+
+<div class="tags">
+<div class="tag">Writing</div>
+<div class="tag">Data</div>
+</div>
+</div>
+
+</div>
+</section>
+
+
+
+<section id="about" class="section">
+
+<h2 class="section-title">Path</h2>
+
+<div class="about-grid">
+
+<div class="timeline">
+
+<div class="entry">
+<div class="entry-year">2026</div>
+<h3>Current Focus</h3>
+<p>
+Data analytics, research and information design.
+</p>
+</div>
+
+<div class="entry">
+<div class="entry-year">2024</div>
+<h3>Clinical + Predictive Modeling</h3>
+<p>
+Applied analytics and optimization research.
+</p>
+</div>
+
+<div class="entry">
+<div class="entry-year">Earlier</div>
+<h3>Research + Policy</h3>
+<p>
+Migration, social data, and interdisciplinary projects.
+</p>
+</div>
+
+</div>
+
+
+<div>
+<p style="font-size:1.2rem; margin-bottom:30px;">
+I’m interested in turning complex systems into
+clear, navigable stories.
+</p>
+
+<p class="small">
+This site is designed like a quiet research map—
+part portfolio, part notebook.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<footer id="contact" class="footer">
+<div>
+<h3>Email</h3>
+<p class="small">you@email.com</p>
+</div>
+
+<div>
+<h3>Links</h3>
+<p class="small">
+GitHub / LinkedIn / CV
+</p>
+</div>
+
+<div class="small">
+© 2026 Your Name
+</div>
+</footer>
+
+
+</div>
+</body>
+</html>
