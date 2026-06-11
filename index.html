@@ -10,216 +10,225 @@
 
 <style>
 :root{
- --bg:#fafaf8;
- --text:#1d1d1d;
- --muted:#7a7a7a;
- --line:#ddddda;
+  --bg:#fafaf8;
+  --text:#1d1d1d;
+  --muted:#7a7a7a;
+  --line:#ddddda;
 }
 
 *{
- margin:0;
- padding:0;
- box-sizing:border-box;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
 html{
- scroll-behavior:smooth;
+  scroll-behavior:smooth;
 }
 
 body{
- background:var(--bg);
- color:var(--text);
- font-family:Inter,sans-serif;
- line-height:1.7;
+  background:var(--bg);
+  color:var(--text);
+  font-family:Inter,sans-serif;
+  line-height:1.7;
 }
 
 body:before{
- content:"";
- position:fixed;
- inset:0;
- background-image:
- linear-gradient(to right,#f0f0ed 1px,transparent 1px),
- linear-gradient(to bottom,#f0f0ed 1px,transparent 1px);
- background-size:80px 80px;
- opacity:.4;
- z-index:-1;
+  content:"";
+  position:fixed;
+  inset:0;
+  background-image:
+    linear-gradient(to right,#f0f0ed 1px,transparent 1px),
+    linear-gradient(to bottom,#f0f0ed 1px,transparent 1px);
+  background-size:80px 80px;
+  opacity:.4;
+  z-index:-1;
 }
 
 .container{
- width:min(1100px,90%);
- margin:auto;
+  width:min(1100px,90%);
+  margin:auto;
 }
 
 nav{
- padding:36px 0;
- display:flex;
- justify-content:space-between;
- align-items:center;
- border-bottom:1px solid var(--line);
+  padding:36px 0;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid var(--line);
 }
 
 .logo{
- font-family:"Cormorant Garamond",serif;
- font-size:2rem;
+  font-family:"Cormorant Garamond",serif;
+  font-size:2rem;
 }
 
 nav ul{
- display:flex;
- gap:32px;
- list-style:none;
+  display:flex;
+  gap:32px;
+  list-style:none;
 }
 
 nav a{
- text-decoration:none;
- color:var(--text);
- font-size:.9rem;
- letter-spacing:.3px;
- opacity:.7;
- transition:.2s;
+  text-decoration:none;
+  color:var(--text);
+  font-size:.9rem;
+  letter-spacing:.3px;
+  opacity:.7;
+  transition:.2s;
 }
 
 nav a:hover{
- opacity:1;
+  opacity:1;
 }
 
 .hero{
- padding:100px 0 80px;
+  padding:100px 0 80px;
+}
+
+.hero-inner{
+  display:flex;
+  align-items:flex-end;
+  gap:60px;
 }
 
 .hero h1{
- font-family:"Cormorant Garamond",serif;
- font-weight:400;
- font-size:clamp(2.5rem,6vw,5rem);
- line-height:.95;
- letter-spacing:-2px;
- margin-bottom:20px;
- max-width:800px;
+  font-family:"Cormorant Garamond",serif;
+  font-weight:400;
+  font-size:clamp(2.5rem,6vw,5rem);
+  line-height:.95;
+  letter-spacing:-2px;
+  flex-shrink:0;
 }
 
 .hero p{
- font-size:1.1rem;
- color:#4b4b4b;
- max-width:560px;
- line-height:1.8;
+  font-size:1.1rem;
+  color:#4b4b4b;
+  line-height:1.8;
+  padding-bottom:8px;
 }
 
 .section{
- padding:60px 0 100px;
+  padding:60px 0 100px;
 }
 
 .section-title{
- font-family:"Cormorant Garamond",serif;
- font-size:3.2rem;
- margin-bottom:60px;
+  font-family:"Cormorant Garamond",serif;
+  font-size:3.2rem;
+  margin-bottom:60px;
 }
 
 .projects{
- display:grid;
- grid-template-columns:repeat(2,1fr);
- gap:40px;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:40px;
 }
 
 .card{
- background:white;
- border:1px solid var(--line);
- border-top:2px solid var(--line);
- padding:40px;
- transition:.3s;
+  background:white;
+  border:1px solid var(--line);
+  border-top:2px solid var(--line);
+  padding:40px;
+  transition:.3s;
 }
 
 .card:nth-child(2){
- transform:translateY(60px);
+  transform:translateY(60px);
 }
 
 .card:nth-child(3){
- transform:translateY(-20px);
+  transform:translateY(-20px);
 }
 
 .card:hover{
- transform:translateY(-8px);
- border-top-color:#1d1d1d;
+  transform:translateY(-8px);
+  border-top-color:#1d1d1d;
 }
 
 .project-number{
- font-family:"Cormorant Garamond",serif;
- font-size:1.1rem;
- color:#bbb;
- margin-bottom:16px;
- letter-spacing:1px;
+  font-family:"Cormorant Garamond",serif;
+  font-size:1.1rem;
+  color:#bbb;
+  margin-bottom:16px;
+  letter-spacing:1px;
 }
 
 .card h3{
- font-size:1.6rem;
- font-weight:400;
- margin-bottom:16px;
+  font-size:1.6rem;
+  font-weight:400;
+  margin-bottom:16px;
 }
 
 .card p{
- color:#666;
- margin-bottom:18px;
+  color:#666;
+  margin-bottom:18px;
 }
 
 .tags{
- display:flex;
- gap:10px;
- flex-wrap:wrap;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
 }
 
 .tag{
- border:1px solid #d9d9d5;
- padding:6px 12px;
- font-size:.8rem;
- transition:.2s;
+  border:1px solid #d9d9d5;
+  padding:6px 12px;
+  font-size:.8rem;
+  transition:.2s;
 }
 
 .tag:hover{
- border-color:#aaa;
+  border-color:#aaa;
 }
 
 .tag a{
- text-decoration:none;
- color:var(--text);
+  text-decoration:none;
+  color:var(--text);
 }
 
 .footer a{
- color:var(--text);
- text-decoration:none;
- border-bottom:1px solid var(--line);
- transition:.2s;
+  color:var(--text);
+  text-decoration:none;
+  border-bottom:1px solid var(--line);
+  transition:.2s;
 }
 
 .footer a:hover{
- border-bottom-color:var(--text);
+  border-bottom-color:var(--text);
 }
 
 .footer{
- padding:80px 0 60px;
- border-top:1px solid var(--line);
- display:flex;
- justify-content:space-between;
- flex-wrap:wrap;
- gap:20px;
+  padding:80px 0 60px;
+  border-top:1px solid var(--line);
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:20px;
 }
 
 .small{
- color:#777;
+  color:#777;
 }
 
 @media(max-width:900px){
+  .projects{
+    grid-template-columns:1fr;
+  }
 
-.projects{
- grid-template-columns:1fr;
-}
+  .card:nth-child(2),
+  .card:nth-child(3){
+    transform:none;
+  }
 
-.card:nth-child(2),
-.card:nth-child(3){
- transform:none;
-}
+  .hero-inner{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:24px;
+  }
 
-.hero h1{
- font-size:4rem;
-}
-
+  .hero h1{
+    font-size:4rem;
+  }
 }
 </style>
 </head>
@@ -228,97 +237,98 @@ nav a:hover{
 <div class="container">
 
 <nav>
-<div class="logo">Jennifer Kim</div>
-<ul>
-<li><a href="#work">Work</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
+  <div class="logo">Jennifer Kim</div>
+  <ul>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
 </nav>
 
 <section class="hero">
-<h1>
-Data <br>
-Science & Analysis<br>
-Portfolio.
-</h1>
-<p>
-I am passionate about storytelling through data.<br>
-Everyone has a story to tell.<br>
-All the more powerful and truthful to have data to back it up.
-</p>
+  <div class="hero-inner">
+    <h1>
+      Data <br>
+      Science & Analysis<br>
+      Portfolio.
+    </h1>
+    <p>
+      I am passionate about storytelling through data.<br>
+      Everyone has a story to tell.<br>
+      All the more powerful and truthful to have data to back it up.
+    </p>
+  </div>
 </section>
 
 <div style="border-top:1px solid var(--line);"></div>
 
 <section id="work" class="section">
 
-<h2 class="section-title">Projects</h2>
+  <h2 class="section-title">Projects</h2>
 
-<div class="projects">
+  <div class="projects">
 
-<div class="card">
-<div class="project-number">01</div>
-<h3>Optimizing surgical plans for spinopelvic alignment</h3>
-<p>MSDS Capstone Project with Virginia Mason Medical Center.</p>
-<div class="tags">
-<div class="tag">Optimization</div>
-<div class="tag">Machine Learning</div>
-<div class="tag">Genetic Algorithm</div>
-<div class="tag"><a href="https://seattlespinealign.com" target="_blank">Website↗</a></div>
-<div class="tag"><a href="https://github.com/124578-UW/Data-Science-Capstone" target="_blank">GitHub↗</a></div>
-</div>
-</div>
+    <div class="card">
+      <div class="project-number">01</div>
+      <h3>Optimizing surgical plans for spinopelvic alignment</h3>
+      <p>MSDS Capstone Project with Virginia Mason Medical Center.</p>
+      <div class="tags">
+        <div class="tag">Optimization</div>
+        <div class="tag">Machine Learning</div>
+        <div class="tag">Genetic Algorithm</div>
+        <div class="tag"><a href="https://seattlespinealign.com" target="_blank">Website↗</a></div>
+        <div class="tag"><a href="https://github.com/124578-UW/Data-Science-Capstone" target="_blank">GitHub↗</a></div>
+      </div>
+    </div>
 
-<div class="card">
-<div class="project-number">02</div>
-<h3>Virtual Art Museum</h3>
-<p>Streamlit-based web application for a virtual art museum.</p>
-<div class="tags">
-<div class="tag">Data Visualization</div>
-<div class="tag">Web Application</div>
-<div class="tag"><a href="https://github.com/madiforman/virtual_art_museum" target="_blank">GitHub↗</a></div>
-</div>
-</div>
+    <div class="card">
+      <div class="project-number">02</div>
+      <h3>Virtual Art Museum</h3>
+      <p>Streamlit-based web application for a virtual art museum.</p>
+      <div class="tags">
+        <div class="tag">Data Visualization</div>
+        <div class="tag">Web Application</div>
+        <div class="tag"><a href="https://github.com/madiforman/virtual_art_museum" target="_blank">GitHub↗</a></div>
+      </div>
+    </div>
 
-<div class="card">
-<div class="project-number">03</div>
-<h3>Seattle Park Mak</h3>
-<p>Interactive dashboard for finding park info, Google rating and safety score.</p>
-<div class="tags">
-<div class="tag">Data Visualization</div>
-<div class="tag">Geospatial Mapping</div>
-<div class="tag">Prompt Engineering</div>
-<div class="tag"><a href="https://bsm2208.github.io/seattleparks/" target="_blank">Map↗</a></div>
-</div>
-</div>
+    <div class="card">
+      <div class="project-number">03</div>
+      <h3>Seattle Park Map</h3>
+      <p>Interactive dashboard for finding park info, Google rating and safety score.</p>
+      <div class="tags">
+        <div class="tag">Data Visualization</div>
+        <div class="tag">Geospatial Mapping</div>
+        <div class="tag">Prompt Engineering</div>
+        <div class="tag"><a href="https://bsm2208.github.io/seattleparks/" target="_blank">Map↗</a></div>
+      </div>
+    </div>
 
-<div class="card">
-<div class="project-number">04</div>
-<h3>Religion Trend</h3>
-<p>2010 VS 2020.</p>
-<div class="tags">
-<div class="tag">Data journalism</div>
-<div class="tag">Data Visualization</div>
-<div class="tag"><a href="https://jenindata.wordpress.com/2026/02/05/religion-composition-2010-vs-2020//" target="_blank">Blog Post↗</a></div>
-</div>
-</div>
+    <div class="card">
+      <div class="project-number">04</div>
+      <h3>Religion Trend</h3>
+      <p>2010 VS 2020.</p>
+      <div class="tags">
+        <div class="tag">Data journalism</div>
+        <div class="tag">Data Visualization</div>
+        <div class="tag"><a href="https://jenindata.wordpress.com/2026/02/05/religion-composition-2010-vs-2020//" target="_blank">Blog Post↗</a></div>
+      </div>
+    </div>
 
-</div>
+  </div>
 </section>
 
 <footer id="contact" class="footer">
-
-<div>
-  <h3>Links</h3>
-  <p class="small">
-    <a href="https://github.com/bsm2208" target="_blank">GitHub</a> / 
-    <a href="https://www.linkedin.com/in/jennifer-kim-43927146" target="_blank">LinkedIn</a>
-  </p>
-</div>
-<div class="small">
-© 2026 Jennifer Kim
-</div>
+  <div>
+    <h3>Links</h3>
+    <p class="small">
+      <a href="https://github.com/bsm2208" target="_blank">GitHub</a> /
+      <a href="https://www.linkedin.com/in/jennifer-kim-43927146" target="_blank">LinkedIn</a>
+    </p>
+  </div>
+  <div class="small">
+    © 2026 Jennifer Kim
+  </div>
 </footer>
 
 </div>
